@@ -16,19 +16,21 @@ namespace HumaneSociety
 
         }
         
-        public static void RunEmployeeQueries(employee,status)
+        public static void RunEmployeeQueries(Employee employee, string action)
         {
 
         }
 
-        public static void GetClient()
+        public static Client GetClient(string username, string password)
         {
+            Client a = new Client();
 
+            return a;
         }
 
-        public static void GetUserAdoptionStatus()
+        public static void GetUserAdoptionStatus(Client client)
         {
-
+            
         }
 
         public static void GetAnimalByID()
@@ -51,37 +53,39 @@ namespace HumaneSociety
 
         }
 
-        public static void AddNewClient()
+        public static Client AddNewClient(string firstName, string lastName, string username, string password, string email, string streetAddress, string zipCode, string state)
+        {
+            Client b = new Client();
+
+            return b;
+        }
+
+        public static void updateClient(Client client)
         {
 
         }
 
-        public static void updateClient()
+        public static void UpdateUsername(Client client)
         {
 
         }
 
-        public static void UpdateUsername()
+        public static void UpdateEmail(Client client)
         {
 
         }
 
-        public static void UpdateEmail()
+        public static void UpdateAddress(Client client)
         {
 
         }
 
-        public static void UpdateAddress()
+        public static void UpdateFirstName(Client client)
         {
 
         }
 
-        public static void UpdateFirstName()
-        {
-
-        }
-
-        public static void UpdateLastName()
+        public static void UpdateLastName(Client client)
         {
 
         }
@@ -96,12 +100,12 @@ namespace HumaneSociety
 
         }
 
-        public static void UpdateShot()
+        public static void UpdateShot(string update, Animal updateshot)
         {
 
         }
 
-        public static void EnterUpdate()
+        public static void EnterUpdate(string animal, string updates)
         {
 
         }

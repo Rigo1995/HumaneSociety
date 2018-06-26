@@ -8,7 +8,6 @@ namespace HumaneSociety
 {
     class Admin : User
     {
-
         
 
 
@@ -72,7 +71,7 @@ namespace HumaneSociety
             employee.email = UserInterface.GetStringData("email", "the employee's");
             try
             {
-                Query.RunEmployeeQueries(employee, string "update");
+                Query.RunEmployeeQueries(employee, "update");
                 UserInterface.DisplayUserOptions("Employee update successful.");
             }
             catch
