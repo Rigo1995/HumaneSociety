@@ -23,17 +23,19 @@ namespace HumaneSociety
 
         public static Client GetClient(string username, string password)
         {
-            Client a = new Client();
+            Client client = new Client();
 
-            return a;
+            return client;
         }
 
         public static void GetUserAdoptionStatus(Client client)
         {
-            
+          //client.id
+          //clientAniimalJunctions data set
+          //return all matching entries with client.id
         }
 
-        public static void GetAnimalByID()
+        public static void GetAnimalByID(int iD)
         {
 
         }
@@ -53,11 +55,18 @@ namespace HumaneSociety
 
         }
 
-        public static Client AddNewClient(string firstName, string lastName, string username, string password, string email, string streetAddress, string zipCode, string state)
+        public static Client AddNewClient(string firstName, string lastName, string username, string password, string email, string streetAddress, int zipCode, int state)
         {
-            Client b = new Client();
-
-            return b;
+            Client client = new Client();
+            client.firstName = firstName;
+            client.lastName = lastName;
+            client.userName = username;
+            client.pass = password;
+            client.email = email;
+            client.UserAddress1.addessLine1 = streetAddress;
+            client.UserAddress1.zipcode = zipCode;
+            client.UserAddress1.USStates = state;
+            return client;
         }
 
         public static void updateClient(Client client)
@@ -90,12 +99,13 @@ namespace HumaneSociety
 
         }
 
-        public static void UpdateAdoption()
+        public static void UpdateAdoption(bool adopt //,jucntion table
+            )
         {
 
         }
 
-        public static void GetShots()
+        public static void GetShots(Animal animal)
         {
 
         }
@@ -132,7 +142,7 @@ namespace HumaneSociety
 
         public static void AddAnimal()
         {
-
+            
         }
 
         public static void EmployeeLogin()
@@ -145,7 +155,7 @@ namespace HumaneSociety
 
         }
 
-        public static void AddUsernameAndPassword()
+        public static void AddUsernameAndPassword(Employee employee)
         {
 
         }
