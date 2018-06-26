@@ -23,9 +23,10 @@ namespace HumaneSociety
 
         public static Client GetClient(string username, string password)
         {
-            Client client = new Client();
-
-            return client;
+            Client currentClient = new Client();
+            currentClient.userName = username;
+            currentClient.pass = password;
+            return currentClient;
         }
 
         public static void GetUserAdoptionStatus(Client client)
