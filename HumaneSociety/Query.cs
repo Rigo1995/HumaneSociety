@@ -8,12 +8,15 @@ namespace HumaneSociety
 {
     public static class Query
     {
+
+
+
         public static void GetPendingAdoptions()
         {
 
         }
         
-        public static void RunEmployeeQueries()
+        public static void RunEmployeeQueries(employee,status)
         {
 
         }

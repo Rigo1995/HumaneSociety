@@ -9,7 +9,7 @@ namespace HumaneSociety
     class Admin : User
     {
 
-
+        
 
 
         public override void LogIn()
@@ -72,7 +72,7 @@ namespace HumaneSociety
             employee.email = UserInterface.GetStringData("email", "the employee's");
             try
             {
-                Query.RunEmployeeQueries(employee, "update");
+                Query.RunEmployeeQueries(employee, string "update");
                 UserInterface.DisplayUserOptions("Employee update successful.");
             }
             catch
