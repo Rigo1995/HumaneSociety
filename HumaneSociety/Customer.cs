@@ -89,7 +89,7 @@ namespace HumaneSociety
             else
             {
                 List<string> Adoptions = new List<string>();
-                foreach(ClientAnimalJunction junction in pendingAdoptions)
+                foreach(ClientAnimalJunction junction in pendingAdoptions.Count)
                 {
                     Adoptions.Add(junction.Animal1.name + " " + junction.Animal1.Breed1.breed1 + " " + junction.approvalStatus);
                 }

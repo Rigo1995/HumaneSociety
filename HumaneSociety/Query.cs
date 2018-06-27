@@ -29,11 +29,14 @@ namespace HumaneSociety
             return currentClient;
         }
 
-        public static void GetUserAdoptionStatus(Client client)
+        public static IQueryable<ClientAnimalJunction>GetUserAdoptionStatus(Client client)
         {
-          //client.id
-          //clientAniimalJunctions data set
-          //return all matching entries with client.id
+            HumaneSocietyDataContext db = new HumaneSocietyDataContext();
+            Client myClient = db.Clients.Where(x => x.ID == client.ID).First();
+            //client.id
+            //clientAniimalJunctions data set
+            //return all matching entries with client.id
+            return;
         }
 
         public static void GetAnimalByID(int iD)
@@ -121,7 +124,7 @@ namespace HumaneSociety
 
         }
 
-        public static void RemoveAnimal()
+        public static void RemoveAnimal(string animal)
         {
 
         }
@@ -151,7 +154,7 @@ namespace HumaneSociety
 
         }
 
-        public static void RetrieveEmployeeUser()
+        public static void RetrieveEmployeeUser(string email)
         {
 
         }
@@ -161,9 +164,9 @@ namespace HumaneSociety
 
         }
 
-        public static void CheckEmployeeUserNameExist()
+        public static bool CheckEmployeeUserNameExist(string username)
         {
-
+            
         }
 
     }

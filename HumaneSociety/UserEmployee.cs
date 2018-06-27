@@ -64,7 +64,7 @@ namespace HumaneSociety
             List<string> adoptionInfo = new List<string>();
             int counter = 1;
             var adoptions = Query.GetPendingAdoptions().ToList();
-            if(adoptions.Count > 0)
+            if(adoptions.GetCount > 0)
             {
                 foreach(ClientAnimalJunction data in adoptions)
                 {
