@@ -139,9 +139,13 @@ namespace HumaneSociety
 
         }
 
-        public static void GetLocation()
+        public static IQueryable<int?> GetLocation()
         {
-
+            HumaneSocietyDataContext context = new HumaneSocietyDataContext();
+            Console.WriteLine("What is the animals name?");
+            string userInput = Console.ReadLine();
+            var location = context.Animals.Where(c => c.name == userInput).Select(c => c.location);
+            return location;
         }
 
         public static void AddAnimal()
