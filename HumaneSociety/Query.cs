@@ -13,7 +13,9 @@ namespace HumaneSociety
 
         public static void GetPendingAdoptions()
         {
-
+            HumaneSocietyDataContext getpendingadoptions = new HumaneSocietyDataContext();
+            var pending = getpendingadoptions.Animals.Where(c => c.name == userInput).Select(c => c.location);
+            return pending;
         }
         
         public static void RunEmployeeQueries(Employee employee, string action)
@@ -39,9 +41,13 @@ namespace HumaneSociety
             return;
         }
 
-        public static void GetAnimalByID(int iD)
+        public static IQueryable<int?> GetAnimalByID()
         {
-
+            HumaneSocietyDataContext getId = new HumaneSocietyDataContext();
+            Console.WriteLine("What is the animals ID?");
+            string userInput = Console.ReadLine();
+            var id = getId.Animals.Where(c => c.ID == userInput).Select(c => c.ID);
+            return id;
         }
 
         public static void Adopt()
@@ -49,9 +55,13 @@ namespace HumaneSociety
 
         }
 
-        public static void RetrieveClients()
+        public static IQueryable<int?> RetrieveClients()
         {
-
+            HumaneSocietyDataContext getId = new HumaneSocietyDataContext();
+            Console.WriteLine("What is the animals ID?");
+            string userInput = Console.ReadLine();
+            var id = getId.Animals.Where(c => c.name == userInput).Select(c => c.ID);
+            return animalId;
         }
 
         public static void GetStates()
@@ -61,6 +71,8 @@ namespace HumaneSociety
 
         public static Client AddNewClient(string firstName, string lastName, string username, string password, string email, string streetAddress, int zipCode, int state)
         {
+            HumaneSocietyDataContext context = new HumaneSocietyDataContext();
+
             Client client = new Client();
             client.firstName = firstName;
             client.lastName = lastName;
@@ -70,6 +82,9 @@ namespace HumaneSociety
             client.UserAddress1.addessLine1 = streetAddress;
             client.UserAddress1.zipcode = zipCode;
             client.UserAddress1.USStates = state;
+
+            context.Clients.InsertOnSubmit(client);
+            context.SubmitChanges();
             return client;
         }
 
@@ -109,9 +124,13 @@ namespace HumaneSociety
 
         }
 
-        public static void GetShots(Animal animal)
+        public static IQueryable<int?> GetShots(Animal animal)
         {
-
+            HumaneSocietyDataContext getshots = new HumaneSocietyDataContext();
+            Console.WriteLine("What is the animals name?");
+            string userInput = Console.ReadLine();
+            var shots = getshots.AnimalShotJunctions.Where(b => b.Shot_ID == userInput).Select(b => b.);
+            return shots;
         }
 
         public static void UpdateShot(string update, Animal updateshot)
@@ -129,22 +148,30 @@ namespace HumaneSociety
 
         }
 
-        public static void GetBreed()
+        public static IQueryable<int?> GetBreed()
         {
-
+            HumaneSocietyDataContext getbreed = new HumaneSocietyDataContext();
+            Console.WriteLine("What is the animals name?");
+            string userInput = Console.ReadLine();
+            var breed = getbreed.Animals.Where(b => b.name == userInput).Select(b => b.breed);
+            return breed;
         }
 
-        public static void GetDiet()
+        public static IQueryable<int?> GetDiet()
         {
-
+            HumaneSocietyDataContext getdiet = new HumaneSocietyDataContext();
+            Console.WriteLine("What is the animals name?");
+            string userInput = Console.ReadLine();
+            var diet = getdiet.Animals.Where(d => d.name == userInput).Select(d => d.diet);
+            return diet;
         }
 
         public static IQueryable<int?> GetLocation()
         {
-            HumaneSocietyDataContext context = new HumaneSocietyDataContext();
+            HumaneSocietyDataContext getlocation = new HumaneSocietyDataContext();
             Console.WriteLine("What is the animals name?");
             string userInput = Console.ReadLine();
-            var location = context.Animals.Where(c => c.name == userInput).Select(c => c.location);
+            var location = getlocation.Animals.Where(c => c.name == userInput).Select(c => c.location);
             return location;
         }
 
