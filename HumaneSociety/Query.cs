@@ -177,7 +177,11 @@ namespace HumaneSociety
 
         public static void AddAnimal()
         {
-            
+            HumaneSocietyDataContext context = new HumaneSocietyDataContext();
+
+            context.Animals.InsertOnSubmit(animal);
+
+            context.SubmitChanges();
         }
 
         public static void EmployeeLogin()
